@@ -1,0 +1,39 @@
+#include <iostream>
+#include <Pessoa.h>
+#include <stdlib.h>
+using namespace std;
+
+int main(){
+
+    int tel, id,opcao;
+    std::string meunome;
+
+
+    cout << "Digite o nome, idade e telefone"<< endl;
+    cin >> meunome >> id >> tel;
+    Pessoa pessoa1 = Pessoa(meunome,id, tel);
+
+    system("cls");
+    cout << "Nome:"<<pessoa1.nome <<"\nIdade: "<<pessoa1.getIdade() <<"\nTelefone : "<<pessoa1.telefone << endl;
+
+    cout << "Deseja mudar a idade ?1. SIM 2. NAO "<< endl;
+    cin >> opcao;
+
+    switch(opcao){
+    case 1:
+        cout << "Digite o novo valor: "<< endl;
+        cin >> id;
+        pessoa1.setIdade(id);
+        cout << "Nome:"<<pessoa1.nome <<"\nIdade: "<<pessoa1.getIdade() <<"\nTelefone : "<<pessoa1.telefone << endl;
+        break;
+
+    case 2:
+        cout<<"Programa Encerrado"<<endl;
+        break;
+    default:
+        cout<<"Programa Encerrado"<<endl;
+        break;
+    }
+
+    return 0;
+}
